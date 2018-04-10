@@ -11,9 +11,6 @@ class Reporter:
         self.sock.send(pickle.dumps(data))
 
 
-
-
-
 if __name__=="__main__":
-    rp=Reporter('127.0.0.1', 6666)
+    rp=Reporter('127.0.0.1', 9090)
     rp.report({'hello':'world'})
