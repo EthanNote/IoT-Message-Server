@@ -13,4 +13,4 @@ class Reporter:
 
 if __name__=="__main__":
     rp=Reporter('127.0.0.1', 9090)
-    rp.report({'hello':'world'})
+    rp.report({'data':'testdata'})

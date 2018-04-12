@@ -1,0 +1,35 @@
+# Empty CSS file for your own CSS
+
+.current-warning
+{
+    background-color: green;
+    width: 100%;
+    height: 120px;
+}
+
+
+.warning-green
+{
+    color: green
+}
+
+.warning-yellow{
+    color: yellow
+}
+
+.sys-state{
+    padding: 20px;
+    height: 150px;
+    overflow: auto;
+}
+
+.msg-list{
+    padding: 20px;
+    max-height: 320px;
+    overflow: auto;
+}
+
+.state-color{
+    background-color: green;
+    padding-bottom: 100%;
+}

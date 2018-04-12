@@ -66,7 +66,7 @@ class Receiver(socketserver.BaseRequestHandler):
                 if type(obj) == dict:
 
                     # set time
-                    obj['time'] = datetime.datetime.now()
+                    # obj['time'] = datetime.datetime.now()
 
                     # check auth info
                     if 'auth' in obj.keys():

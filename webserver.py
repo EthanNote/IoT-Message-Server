@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import datetime
 import socket
 import socketserver
 import threading
@@ -17,14 +18,16 @@ socketio = SocketIO(app, async_mode=async_mode)
 thread = None
 thread_lock = Lock()
 
-receiver_port=9090
+receiver_port = 9090
+
 
 def receiver_task():
-
     class EmitReceiver(Receiver):
         def notify(self, message: dict):
+            message['address'] = self.request.getpeername()
+            message['time'] = datetime.datetime.now()
             for k in message.keys():
-                message[k]=str(message[k])
+                message[k] = str(message[k])
             print('EMIT', message)
             socketio.emit('event', message, namespace='/log')
 
@@ -39,6 +42,6 @@ def index():
 
 
 if __name__ == '__main__':
-    th=threading.Thread(target=receiver_task)
+    th = threading.Thread(target=receiver_task)
     th.start()
     socketio.run(app, debug=False)
