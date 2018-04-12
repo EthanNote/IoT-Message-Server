@@ -44,4 +44,4 @@ def index():
 if __name__ == '__main__':
     th = threading.Thread(target=receiver_task)
     th.start()
-    socketio.run(app, debug=False)
+    socketio.run(app, debug=False, host='0.0.0.0')
